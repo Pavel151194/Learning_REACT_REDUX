@@ -1,0 +1,9 @@
+.form_footer{
+    margin: auto 0 0 0;
+    bottom: 0;
+    line-height: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
