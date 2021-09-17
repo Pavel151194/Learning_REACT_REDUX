@@ -7,7 +7,7 @@ import { FormFootText } from "../../atoms/FormFootText"
 import "./RegistrationForm.css"
 
 export const RegistrationForm = memo( () => (
-    <section className="form">
+    <div className="form">
         <FormInput
             inputTitle="User Name"
             inputType="text"
@@ -28,8 +28,8 @@ export const RegistrationForm = memo( () => (
         <FormFootText content={
             <div style={{display: "flex", gap: "5px"}}>
                 <p>If you have account, you can</p>
-                <Link style={{color: "#016EFC", fontWeight: "bold", letterSpacing: "0.03em"}} to="loginForm">Login</Link>
+                <Link style={{color: "#016EFC", fontWeight: "bold", letterSpacing: "0.03em"}} to="login">Login</Link>
             </div>
         }/>
-    </section>
+    </div>
 ) )

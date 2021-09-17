@@ -8,7 +8,7 @@ import "./ResetPasswordForm.css"
 import { FormHeadText } from "../../atoms/FormHeadText"
 
 export const ResetPasswordForm = memo( () => (
-    <section className="form">
+    <div className="form">
         <FormHeadText content={"Please enter the email for your account"}/>
         <FormInput
             inputTitle="Email"
@@ -18,8 +18,8 @@ export const ResetPasswordForm = memo( () => (
         <FormFootText content={
             <div style={{display: "flex", gap: "5px"}}>
                 <p>Return to</p>
-                <Link style={{color: "#016EFC", fontWeight: "bold", letterSpacing: "0.03em"}} to="loginForm">login</Link>
+                <Link style={{color: "#016EFC", fontWeight: "bold", letterSpacing: "0.03em"}} to="login">login</Link>
             </div>
         }/>
-    </section>
+    </div>
 ) )

@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import { Link} from "react-router-dom"
-import { FormTitle } from '../components/atoms/FormTitle'
+import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
 import { RegistrationForm } from '../components/molecules/RegistrationForm'
-import { FormFooter } from '../components/atoms/FormFooter'
+import { FooterSvg } from "../../src/assets/svgs"
 
 export const RegistrationFormPage = () => {
     
     return (
-        <div className="sign_page">
-
-            <FormTitle content={
+        <SignFormTemplate
+            formTitle={
                 <div style={{display: "flex", gap: "26px"}}>
-                    <Link to="loginForm">Login</Link>
+                    <Link to="login">Login</Link>
                     <div style={{background: "#254050", border: "2px solid #254050"}}></div>
-                    <Link to="registrationForm">Registration</Link>
+                    <Link to="registration">Registration</Link>
                 </div>
-            }/>
-            <RegistrationForm/>
-            <FormFooter/>
-        </div>
+            }
+            formMain={<RegistrationForm/>}
+            formFooter={<FooterSvg/>}
+        />
     )
 }

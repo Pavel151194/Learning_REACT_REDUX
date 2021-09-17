@@ -1,22 +1,22 @@
-import React from 'react';
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import './App.css';
-import { LoginFormPage } from './pages/LoginFormPage';
-import { RegistrationFormPage } from './pages/RegistrationFormPage';
-import { ResetPasswordFormPage } from './pages/ResetPasswordFormPage';
+import './App.css'
+import { LoginFormPage } from './pages/LoginFormPage'
+import { RegistrationFormPage } from './pages/RegistrationFormPage'
+import { ResetPasswordFormPage } from './pages/ResetPasswordFormPage'
 
 function App() {
   return (
 
     <Router>
       <Switch>
-        <Route exact path="/loginForm">
+        <Route exact path="/login">
           <LoginFormPage/>
         </Route>
-        <Route exact path="/registrationForm">
+        <Route exact path="/registration">
           <RegistrationFormPage/>
         </Route>
-        <Route exact path="/resetPasswordForm">
+        <Route exact path="/reset-password">
           <ResetPasswordFormPage/>
         </Route>
       </Switch>
@@ -24,4 +24,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

@@ -37,9 +37,3 @@ li{
 input{
 	cursor: text;
 }
-.sign_page{
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}

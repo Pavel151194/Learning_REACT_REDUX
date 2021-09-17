@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Link} from "react-router-dom"
-import { FormTitle } from '../components/atoms/FormTitle'
+import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
 import { ResetPasswordForm } from '../components/molecules/ResetPasswordForm'
-import { FormFooter } from '../components/atoms/FormFooter'
+import { FooterSvg } from "../../src/assets/svgs"
 
 export const ResetPasswordFormPage = () => {
     
     return (
-        <div className="sign_page">
-            <FormTitle content={"Reset password"}/>
-            <ResetPasswordForm/>
-            <FormFooter/>
-        </div>
+        <SignFormTemplate
+            formTitle={"Reset password"}
+            formMain={<ResetPasswordForm/>}
+            formFooter={<FooterSvg/>}
+        />
     )
 }
