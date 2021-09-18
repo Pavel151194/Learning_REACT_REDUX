@@ -1,9 +1,9 @@
 .sign_form_template{
-    position: relative;
-    height: 100vh;
+    min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+    background: url(../../../assets/form_background.svg) no-repeat bottom right
 }
 h2{
     font-family: 'Raleway', sans-serif;
@@ -13,13 +13,4 @@ h2{
     letter-spacing: 0.03em;
     color: #75869B;
     margin-bottom: 60px;
-}
-.form_footer{
-    margin: auto 0 0 0;
-    bottom: 0;
-    line-height: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }

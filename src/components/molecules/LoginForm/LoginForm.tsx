@@ -7,7 +7,7 @@ import { FormFootText } from "../../atoms/FormFootText"
 import "./LoginForm.css"
 
 export const LoginForm = memo( () => (
-    <div className="form">
+    <main className="form">
         <FormInput
             inputTitle="Email"
             inputType="email"
@@ -17,11 +17,9 @@ export const LoginForm = memo( () => (
             inputType="password"
         />
         <FormButton buttonName="Login"/>
-        <FormFootText content={
-            <div style={{display: "flex", gap: "5px"}}>
-                <p>Forgot your password?</p>
-                <Link style={{color: "#016EFC", fontWeight: "bold", letterSpacing: "0.03em"}} to="reset-password">Reset password</Link>
-            </div>
-        }/>
-    </div>
+        <FormFootText
+            text={"Forgot your password?"}
+            link={<Link to="reset-password">Reset password</Link>}
+        />
+    </main>
 ) )
