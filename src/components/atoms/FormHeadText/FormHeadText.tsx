@@ -4,7 +4,7 @@ import { memo } from "react"
 import "./FormHeadText.css"
 
 interface IFormHeadText {
-    content: string;
+    content: string
 }
   
 export const FormHeadText = memo( ({ content }: IFormHeadText) => (
