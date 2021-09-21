@@ -1,7 +1,7 @@
-import * as React from "react"
+import React, { useState, useEffect } from 'react'
 import { memo } from "react"
 import { Link} from "react-router-dom"
-import { validateEmail } from '../../../helpers'
+import { validateEmail, validatePassword } from '../../../helpers'
 import { FormInput } from "../../atoms/FormInput"
 import { FormButton } from "../../atoms/FormButton"
 import { FormFootText } from "../../atoms/FormFootText"
@@ -12,29 +12,43 @@ interface ILoginForm {
 }
 
 export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
-    const inputsState = true
-    const buttonState = false
+    const [emailValue, setEmailValue] = useState("")
+    const [passwordValue, setPasswordValue] = useState("")
+
+    const [isEmailValid, setEmailValid] = useState(true)
+    const [isPasswordValid, setPasswordValid] = useState(true)
+
+    const [isButtonDisabled, setButtonState] = useState(false)
+
+    const onChangeEmail = (email: string) => {
+        setEmailValue(email)
+        validateEmail(email) ? setEmailValid(true) : setEmailValid(false)
+    }
+    const onChangePassword = (password: string) => {
+        setPasswordValue(password)
+        validatePassword(password) ? setPasswordValid(true) : setPasswordValid(false)
+    }
 
     return (
         <main className="form">
             <FormInput
-                isValid={inputsState}
                 inputTitle="Email"
                 inputType="email"
-                value={""}
-                onChange={() => {}}
+                value={emailValue}
+                isValid={isEmailValid}
+                onChange={onChangeEmail}
             />
             <FormInput
-                isValid={inputsState}
                 inputTitle="Password"
                 inputType="password"
-                value={""}
-                onChange={() => {}}
+                value={passwordValue}
+                isValid={isPasswordValid}
+                onChange={onChangePassword}
             />
             <FormButton
-                isDisabled={buttonState}
-                onClick={onClickFormButton}
                 buttonName="Login"
+                isDisabled={isButtonDisabled}
+                onClick={onClickFormButton}
             />
             <FormFootText
                 text={"Forgot your password?"}

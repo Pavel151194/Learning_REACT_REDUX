@@ -5,7 +5,6 @@ import { FormTitleLinks } from '../components/atoms/FormTitleLinks'
 import { LoginForm } from '../components/molecules/LoginForm'
 
 export const LoginFormPage = () => {
-    const inputsState = true
 
     return (
         <SignFormTemplate
