@@ -1,15 +1,15 @@
 import React from 'react'
+import { Header } from '../../molecules/Header'
 import "./HomeTemplate.css"
 
 interface IHomeTemplate {
-    homeHeader: React.ReactNode
     homeTitle: React.ReactNode
     homeMain: React.ReactNode
 }
 
-export const HomeTemplate = ({ homeHeader, homeTitle, homeMain }: IHomeTemplate) => (
+export const HomeTemplate = ({ homeTitle, homeMain }: IHomeTemplate) => (
     <div className="wrapper home_template">
-        {homeHeader}
+        <Header/>
         {homeTitle}
         {homeMain}
     </div>

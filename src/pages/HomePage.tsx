@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link} from "react-router-dom"
 import { HomeTemplate } from '../components/templates/HomeTemplate/HomeTemplate'
-import { Header } from '../components/molecules/Header'
 import { FormButton } from '../components/atoms/FormButton'
 
 export const HomePage = () => {
     
     return(
         <HomeTemplate
-            homeHeader={<Header/>}
             homeTitle={
                 <h1>Make your Blog
                     <Link style={{color: "#007BFF"}} to="login"> Online</Link>

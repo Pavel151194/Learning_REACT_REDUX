@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
-import { Header } from '../components/molecules/Header'
+import { FormTitle } from '../components/atoms/FormTitle'
 import { FormButton } from '../components/atoms/FormButton'
 
 export const PasswordConfirmationPage = () => {
@@ -8,8 +8,7 @@ export const PasswordConfirmationPage = () => {
 
     return (
         <SignFormTemplate
-            formHeader={<Header/>}
-            formTitle={<h2 style={{color: "#016EFC"}}>Reset password</h2>}
+            formTitle={<FormTitle content={"Reset password"}/>}
             formMain={
                 <main className="sign_form_template_main">
                     <p>
