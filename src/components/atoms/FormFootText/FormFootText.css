@@ -1,0 +1,14 @@
+.form_foot_text{
+    display: flex;
+    gap: 5px;
+    text-align: center;
+    align-self: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    color: #254050;
+}
+.form_foot_text>a{
+    color: #016EFC;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}

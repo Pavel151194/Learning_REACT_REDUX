@@ -1,0 +1,8 @@
+.form_title_links{
+    display: flex;
+    gap: 26px;
+}
+.vertical_line{
+    background-color: #254050;
+    border: 2px solid #254050;
+}

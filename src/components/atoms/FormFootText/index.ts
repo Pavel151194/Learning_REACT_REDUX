@@ -1,0 +1,1 @@
+export { FormFootText } from "./FormFootText";

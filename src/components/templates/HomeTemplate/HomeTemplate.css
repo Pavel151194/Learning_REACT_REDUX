@@ -1,0 +1,33 @@
+.home_template{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background: url(../../../assets/home_background.svg) no-repeat bottom right
+}
+h1{
+    max-width: 345px;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    letter-spacing: 0.03em;
+    color: #254050;
+}
+.home_main{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.home_main>p{
+    max-width: 497px;
+    font-family: 'Raleway', sans-serif;;
+    font-size: 25px;
+    line-height: 34px;
+    letter-spacing: 0.03em;
+    color: #254050;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
