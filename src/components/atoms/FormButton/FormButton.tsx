@@ -8,5 +8,5 @@ interface IFormButton {
 }
 
 export const FormButton = memo( ({ onClick, buttonName }: IFormButton) => (
-    <button className="form_button" onClick = {() => onClick()}>{buttonName}</button>
+    <button className="form_button" onClick = {onClick}>{buttonName}</button>
 ) )
