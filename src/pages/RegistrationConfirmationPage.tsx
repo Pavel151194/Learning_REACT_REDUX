@@ -16,7 +16,10 @@ export const RegistrationConfirmationPage = () => {
                         <span> {email} </span>
                         Please, check your email
                     </p>
-                    <FormButton buttonName={"Home"}/>
+                    <FormButton
+                        onClick={() => {}}
+                        buttonName={"Home"}
+                    />
                 </main>
             }
         />

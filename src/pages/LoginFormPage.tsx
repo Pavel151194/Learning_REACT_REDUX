@@ -8,7 +8,9 @@ export const LoginFormPage = () => {
     return (
         <SignFormTemplate
             formTitle={<FormTitleLinks/>}
-            formMain={<LoginForm/>}
+            formMain={
+                <LoginForm onClickFormButton={() => {}}/>
+            }
         />
     )
 }

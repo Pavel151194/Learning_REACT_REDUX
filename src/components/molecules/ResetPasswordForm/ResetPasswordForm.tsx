@@ -7,14 +7,21 @@ import { FormFootText } from "../../atoms/FormFootText"
 import "./ResetPasswordForm.css"
 import { FormHeadText } from "../../atoms/FormHeadText"
 
-export const ResetPasswordForm = memo( () => (
+interface IResetPasswordForm {
+    onClickFormButton: () => void
+}
+
+export const ResetPasswordForm = memo( ({ onClickFormButton }: IResetPasswordForm) => (
     <main className="form">
         <FormHeadText content={"Please enter the email for your account"}/>
         <FormInput
             inputTitle="Email"
             inputType="email"
         />
-        <FormButton buttonName="Reset"/>
+        <FormButton
+            onClick={onClickFormButton}
+            buttonName="Reset"
+        />
         <FormFootText 
             text={"Return to"}
             link={<Link to="login">login</Link>}

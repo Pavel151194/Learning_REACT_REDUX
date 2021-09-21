@@ -11,7 +11,10 @@ export const PasswordConfirmedPage = () => {
             formMain={
                 <main className="sign_form_template_main">
                     <p>Your password has been changed</p>
-                    <FormButton buttonName={"Login"}/>
+                    <FormButton
+                        onClick={() => {}}
+                        buttonName={"Login"}
+                    />
                 </main>
             }
         />

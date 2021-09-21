@@ -6,7 +6,11 @@ import { FormButton } from "../../atoms/FormButton"
 import { FormFootText } from "../../atoms/FormFootText"
 import "./RegistrationForm.css"
 
-export const RegistrationForm = memo( () => (
+interface IRegistrationForm {
+    onClickFormButton: () => void
+}
+
+export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => (
     <main className="form">
         <FormInput
             inputTitle="User Name"
@@ -24,7 +28,10 @@ export const RegistrationForm = memo( () => (
             inputTitle="Confirm Password"
             inputType="text"
         />
-        <FormButton buttonName="Login"/>
+        <FormButton
+            onClick={onClickFormButton}
+            buttonName="Login"
+        />
         <FormFootText 
             text={"If you have account, you can"}
             link={<Link to="login">Login</Link>}

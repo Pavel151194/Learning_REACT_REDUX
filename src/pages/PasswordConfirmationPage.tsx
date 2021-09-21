@@ -16,7 +16,10 @@ export const PasswordConfirmationPage = () => {
                         <span> {email} </span>
                         with a link to reset your password
                     </p>
-                    <FormButton buttonName={"Home"}/>
+                    <FormButton
+                        onClick={() => {}}
+                        buttonName={"Home"}
+                    />
                 </main>
             }
         />

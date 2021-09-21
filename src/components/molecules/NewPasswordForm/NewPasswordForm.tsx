@@ -5,7 +5,11 @@ import { FormButton } from "../../atoms/FormButton"
 import { FormHeadText } from "../../atoms/FormHeadText"
 import "./NewPasswordForm.css"
 
-export const NewPasswordForm = memo( () => (
+interface INewPasswordForm {
+    onClickFormButton: () => void
+}
+
+export const NewPasswordForm = memo( ({ onClickFormButton }: INewPasswordForm) => (
     <main className="form">
         <FormHeadText content={"Please enter new password"}/>
         <FormInput
@@ -16,6 +20,9 @@ export const NewPasswordForm = memo( () => (
             inputTitle="Confirm password"
             inputType="password"
         />
-        <FormButton buttonName="Set password"/>
+        <FormButton
+            onClick={onClickFormButton}
+            buttonName="Set password"
+        />
     </main>
 ) )

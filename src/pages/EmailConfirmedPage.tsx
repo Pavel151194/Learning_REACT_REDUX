@@ -11,7 +11,10 @@ export const EmailConfirmedPage = () => {
             formMain={
                 <main className="sign_form_template_main">
                     <p>Email confirmed.<br/>Your registration is now completed</p>
-                    <FormButton buttonName={"Login"}/>
+                    <FormButton 
+                        onClick={() => {}}
+                        buttonName={"Login"}
+                    />
                 </main>
             }
         />

@@ -8,7 +8,9 @@ export const ResetPasswordFormPage = () => {
     return (
         <SignFormTemplate
             formTitle={<FormTitle content={"Reset password"}/>}
-            formMain={<ResetPasswordForm/>}
+            formMain={
+                <ResetPasswordForm onClickFormButton={() => {}}/>
+            }
         />
     )
 }

@@ -6,7 +6,11 @@ import { FormButton } from "../../atoms/FormButton"
 import { FormFootText } from "../../atoms/FormFootText"
 import "./LoginForm.css"
 
-export const LoginForm = memo( () => (
+interface ILoginForm {
+    onClickFormButton: () => void
+}
+
+export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => (
     <main className="form">
         <FormInput
             inputTitle="Email"
@@ -16,7 +20,10 @@ export const LoginForm = memo( () => (
             inputTitle="Password"
             inputType="password"
         />
-        <FormButton buttonName="Login"/>
+        <FormButton
+            onClick={onClickFormButton}
+            buttonName="Login"
+        />
         <FormFootText
             text={"Forgot your password?"}
             link={<Link to="reset-password">Reset password</Link>}
