@@ -6,28 +6,53 @@ import { FormButton } from "../../atoms/FormButton"
 import { FormFootText } from "../../atoms/FormFootText"
 import "./RegistrationForm.css"
 
-export const RegistrationForm = memo( () => (
-    <main className="form">
-        <FormInput
-            inputTitle="User Name"
-            inputType="text"
-        />
-        <FormInput
-            inputTitle="Email"
-            inputType="email"
-        />
-        <FormInput
-            inputTitle="Password"
-            inputType="text"
-        />
-        <FormInput
-            inputTitle="Confirm Password"
-            inputType="text"
-        />
-        <FormButton buttonName="Login"/>
-        <FormFootText 
-            text={"If you have account, you can"}
-            link={<Link to="login">Login</Link>}
-        />
-    </main>
-) )
+interface IRegistrationForm {
+    onClickFormButton: () => void
+}
+
+export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => {
+    const inputsState = true
+    const buttonState = false
+
+    return (
+        <main className="form">
+            <FormInput
+                isValid={inputsState}
+                inputTitle="User Name"
+                inputType="text"
+                value={""}
+                onChange={() => {}}
+            />
+            <FormInput
+                isValid={inputsState}
+                inputTitle="Email"
+                inputType="email"
+                value={""}
+                onChange={() => {}}
+            />
+            <FormInput
+                isValid={inputsState}
+                inputTitle="Password"
+                inputType="text"
+                value={""}
+                onChange={() => {}}
+            />
+            <FormInput
+                isValid={inputsState}
+                inputTitle="Confirm Password"
+                inputType="text"
+                value={""}
+                onChange={() => {}}
+            />
+            <FormButton
+                isDisabled={buttonState}
+                onClick={onClickFormButton}
+                buttonName="Login"
+            />
+            <FormFootText 
+                text={"If you have account, you can"}
+                link={<Link to="login">Login</Link>}
+            />
+        </main>
+    )
+})

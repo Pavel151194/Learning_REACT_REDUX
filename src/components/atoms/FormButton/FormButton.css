@@ -16,3 +16,10 @@
     background: #FFFFFF;
     color: #007BFF;
 }
+
+.form_button:disabled, .form_button[disabled]{
+    border: 4px solid #E5E5E5;
+    background: #E5E5E5;
+    color: #254050;
+    cursor: not-allowed;
+}

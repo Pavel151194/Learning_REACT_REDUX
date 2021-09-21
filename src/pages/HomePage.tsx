@@ -4,6 +4,7 @@ import { HomeTemplate } from '../components/templates/HomeTemplate/HomeTemplate'
 import { FormButton } from '../components/atoms/FormButton'
 
 export const HomePage = () => {
+    const buttonState = false
     
     return(
         <HomeTemplate
@@ -15,7 +16,11 @@ export const HomePage = () => {
             homeMain={
                 <main className="home_main">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero dolorum ea nostrum cum similique eligendi aliquam unde, maxime delectus amet dolor reiciendis omnis impedit dolorem excepturi ex distinctio, incidunt quod?</p>
-                    <FormButton buttonName={"Learn More"}/>
+                    <FormButton
+                        isDisabled={buttonState}
+                        onClick={() => {}}
+                        buttonName={"Learn More"}
+                    />
                 </main>
             }
         />

@@ -3,12 +3,20 @@ import { memo } from "react"
 import "./FormInput.css"
 
 interface IFormInput {
-    inputType: string
+    isValid: boolean
     inputTitle: string
+    inputType: string
+    value: string
+    onChange: () => void
 }
 
-export const FormInput = memo( ({ inputType, inputTitle }: IFormInput) => (
+export const FormInput = memo( ({ isValid, inputTitle, inputType, value, onChange }: IFormInput) => (
     <label className="input">{inputTitle}
-        <input type={inputType}></input>
+        <input
+            className={isValid? "valid" : "invalid"}
+            type={inputType}
+            value={value}
+            onChange={onChange}>
+        </input>
     </label>
 ) )

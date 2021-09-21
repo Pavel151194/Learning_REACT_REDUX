@@ -8,7 +8,11 @@ export const RegistrationFormPage = () => {
     return (
         <SignFormTemplate
             formTitle={<FormTitleLinks/>}
-            formMain={<RegistrationForm/>}
+            formMain={
+                <RegistrationForm
+                    onClickFormButton={() => {}}
+                />
+            }
         />
     )
 }

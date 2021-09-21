@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
 import { FormTitle } from '../components/atoms/FormTitle'
 import { FormButton } from '../components/atoms/FormButton'
 
 export const RegistrationConfirmationPage = () => {
     const email = "test@gmail.com"
+    const buttonState = false
+
+    const history = useHistory()
+    const navigateTo = (path: string) => history.push(path)
 
     return (
         <SignFormTemplate
@@ -16,7 +21,11 @@ export const RegistrationConfirmationPage = () => {
                         <span> {email} </span>
                         Please, check your email
                     </p>
-                    <FormButton buttonName={"Home"}/>
+                    <FormButton
+                        isDisabled={buttonState}
+                        onClick={() => navigateTo("/")}
+                        buttonName={"Home"}
+                    />
                 </main>
             }
         />

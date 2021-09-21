@@ -8,7 +8,11 @@ export const NewPasswordFormPage = () => {
     return (
         <SignFormTemplate
             formTitle={<FormTitle content={"New password"}/>}
-            formMain={<NewPasswordForm/>}
+            formMain={
+                <NewPasswordForm
+                    onClickFormButton={() => {}}
+                />
+            }
         />
     )
 }
