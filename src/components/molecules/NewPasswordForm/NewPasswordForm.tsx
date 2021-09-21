@@ -6,30 +6,32 @@ import { FormHeadText } from "../../atoms/FormHeadText"
 import "./NewPasswordForm.css"
 
 interface INewPasswordForm {
-    isValid: boolean
     onClickFormButton: () => void
 }
 
-export const NewPasswordForm = memo( ({ isValid, onClickFormButton }: INewPasswordForm) => {
+export const NewPasswordForm = memo( ({ onClickFormButton }: INewPasswordForm) => {
+    const inputsState = true
+    const buttonState = false
 
     return (
         <main className="form">
             <FormHeadText content={"Please enter new password"}/>
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="New password"
                 inputType="password"
                 value={""}
                 onChange={() => {}}
             />
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Confirm password"
                 inputType="password"
                 value={""}
                 onChange={() => {}}
             />
             <FormButton
+                isDisabled={buttonState}
                 onClick={onClickFormButton}
                 buttonName="Set password"
             />

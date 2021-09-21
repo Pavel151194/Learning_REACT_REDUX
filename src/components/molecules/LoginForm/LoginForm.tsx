@@ -8,29 +8,31 @@ import { FormFootText } from "../../atoms/FormFootText"
 import "./LoginForm.css"
 
 interface ILoginForm {
-    isValid: boolean
     onClickFormButton: () => void
 }
 
-export const LoginForm = memo( ({ isValid, onClickFormButton }: ILoginForm) => {
-    
+export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
+    const inputsState = true
+    const buttonState = false
+
     return (
         <main className="form">
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Email"
                 inputType="email"
                 value={""}
                 onChange={() => {}}
             />
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Password"
                 inputType="password"
                 value={""}
                 onChange={() => {}}
             />
             <FormButton
+                isDisabled={buttonState}
                 onClick={onClickFormButton}
                 buttonName="Login"
             />

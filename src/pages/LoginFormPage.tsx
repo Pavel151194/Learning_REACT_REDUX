@@ -12,7 +12,6 @@ export const LoginFormPage = () => {
             formTitle={<FormTitleLinks/>}
             formMain={
                 <LoginForm
-                    isValid={inputsState}
                     onClickFormButton={() => {}}
                 />
             }

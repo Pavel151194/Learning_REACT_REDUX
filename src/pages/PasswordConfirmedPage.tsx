@@ -7,6 +7,7 @@ import { FormButton } from '../components/atoms/FormButton'
 export const PasswordConfirmedPage = () => {
     const history = useHistory()
     const navigateTo = (path: string) => history.push(path)
+    const buttonState = false
 
     return (
         <SignFormTemplate
@@ -15,6 +16,7 @@ export const PasswordConfirmedPage = () => {
                 <main className="sign_form_template_main">
                     <p>Your password has been changed</p>
                     <FormButton
+                        isDisabled={buttonState}
                         onClick={() => navigateTo("/login")}
                         buttonName={"Login"}
                     />

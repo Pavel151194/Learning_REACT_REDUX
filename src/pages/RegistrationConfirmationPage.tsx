@@ -6,6 +6,7 @@ import { FormButton } from '../components/atoms/FormButton'
 
 export const RegistrationConfirmationPage = () => {
     const email = "test@gmail.com"
+    const buttonState = false
 
     const history = useHistory()
     const navigateTo = (path: string) => history.push(path)
@@ -21,6 +22,7 @@ export const RegistrationConfirmationPage = () => {
                         Please, check your email
                     </p>
                     <FormButton
+                        isDisabled={buttonState}
                         onClick={() => navigateTo("/")}
                         buttonName={"Home"}
                     />

@@ -4,14 +4,12 @@ import { FormTitleLinks } from '../components/atoms/FormTitleLinks'
 import { RegistrationForm } from '../components/molecules/RegistrationForm'
 
 export const RegistrationFormPage = () => {
-    const inputsState = true
     
     return (
         <SignFormTemplate
             formTitle={<FormTitleLinks/>}
             formMain={
                 <RegistrationForm
-                    isValid={inputsState}
                     onClickFormButton={() => {}}
                 />
             }

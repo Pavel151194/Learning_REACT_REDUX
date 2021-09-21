@@ -7,43 +7,45 @@ import { FormFootText } from "../../atoms/FormFootText"
 import "./RegistrationForm.css"
 
 interface IRegistrationForm {
-    isValid: boolean
     onClickFormButton: () => void
 }
 
-export const RegistrationForm = memo( ({ isValid, onClickFormButton }: IRegistrationForm) => {
-    
+export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => {
+    const inputsState = true
+    const buttonState = false
+
     return (
         <main className="form">
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="User Name"
                 inputType="text"
                 value={""}
                 onChange={() => {}}
             />
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Email"
                 inputType="email"
                 value={""}
                 onChange={() => {}}
             />
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Password"
                 inputType="text"
                 value={""}
                 onChange={() => {}}
             />
             <FormInput
-                isValid={isValid}
+                isValid={inputsState}
                 inputTitle="Confirm Password"
                 inputType="text"
                 value={""}
                 onChange={() => {}}
             />
             <FormButton
+                isDisabled={buttonState}
                 onClick={onClickFormButton}
                 buttonName="Login"
             />

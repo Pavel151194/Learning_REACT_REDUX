@@ -11,7 +11,6 @@ export const ResetPasswordFormPage = () => {
             formTitle={<FormTitle content={"Reset password"}/>}
             formMain={
                 <ResetPasswordForm
-                    isValid={inputsState}
                     onClickFormButton={() => {}}
                 />
             }
