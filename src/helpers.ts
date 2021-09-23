@@ -1,5 +1,7 @@
+export const validateName = (name: string) => name.length > 1
 export const validateEmail = (email: string) => {
-    const reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return reg.test(String(email).toLowerCase())
-}
-export const validatePassword = (password: string) => password.length > 4  
+    return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(
+    String(email)
+)}
+export const validatePassword = (password: string) => password.trim().length > 4
+export const validateConfirmPassword = (password: string, confirmPassword: string) => confirmPassword.trim().length > 4 && password.trim() === confirmPassword.trim()

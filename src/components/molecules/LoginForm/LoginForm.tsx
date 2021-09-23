@@ -37,6 +37,7 @@ export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
                 value={emailValue}
                 isValid={isEmailValid}
                 onChange={onChangeEmail}
+                autoFocus={true}
             />
             <FormInput
                 inputTitle="Password"
