@@ -22,11 +22,8 @@ const actions = {
   setRegistrationConfirmPasswordAction
 }
 
-export const registrationReducer = createReducer<
-  IRegistrationState,
-  ActionType<typeof actions>
->(defaultState)
-  .handleAction(setRegistrationEmailAction, (state, { payload: email }) => ({ ...state, email }))
-  .handleAction(setRegistrationUsernameAction, (state, { payload: userName }) => ({ ...state, userName }))
-  .handleAction(setRegistrationPasswordAction, (state, { payload: password }) => ({ ...state, password }))
-  .handleAction(setRegistrationConfirmPasswordAction, (state, { payload: confirmPassword }) => ({ ...state, confirmPassword }))
+export const registrationReducer = createReducer<IRegistrationState, ActionType <typeof actions> >(defaultState)
+  .handleAction(setRegistrationEmailAction, (state, { payload: email }) => ({ ...state, email }) )
+  .handleAction(setRegistrationUsernameAction, (state, { payload: userName }) => ({ ...state, userName }) )
+  .handleAction(setRegistrationPasswordAction, (state, { payload: password }) => ({ ...state, password }) )
+  .handleAction(setRegistrationConfirmPasswordAction, (state, { payload: confirmPassword }) => ({ ...state, confirmPassword }) )

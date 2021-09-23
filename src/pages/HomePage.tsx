@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link} from "react-router-dom"
 import { HomeTemplate } from '../components/templates/HomeTemplate/HomeTemplate'
 import { FormButton } from '../components/atoms/FormButton'
