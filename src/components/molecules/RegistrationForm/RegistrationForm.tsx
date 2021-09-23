@@ -1,9 +1,13 @@
 import * as React from "react"
 import { memo } from "react"
-import { Link} from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { Link, useHistory} from "react-router-dom"
+import { setRegistrationEmailAction, setRegistrationUsernameAction, setRegistrationPasswordAction, setRegistrationConfirmPasswordAction } from "../../../core"
 import { FormInput } from "../../atoms/FormInput"
 import { FormButton } from "../../atoms/FormButton"
 import { FormFootText } from "../../atoms/FormFootText"
+import { getRegistrationSelector } from "../../../core/selectors/registrationSelectors"
+import { validateName, validateEmail, validatePassword, validateConfirmPassword } from "../../../helpers"
 import "./RegistrationForm.css"
 
 interface IRegistrationForm {
@@ -11,43 +15,49 @@ interface IRegistrationForm {
 }
 
 export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => {
-    const inputsState = true
-    const buttonState = false
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const { userName, email, password, confirmPassword } = useSelector(getRegistrationSelector)
+    const isValidName = validateName(userName)
+    const isValidEmail = validateEmail(email)
+    const isValidPassword = validatePassword(password)
+    const isValidConfirmPassword = validateConfirmPassword(password, confirmPassword)
 
     return (
         <main className="form">
             <FormInput
-                isValid={inputsState}
                 inputTitle="User Name"
                 inputType="text"
-                value={""}
-                onChange={() => {}}
+                value={userName}
+                isValid={isValidName}
+                onChange={(value: string) => dispatch(setRegistrationUsernameAction(value.trim()))}
+                autoFocus={true}
             />
             <FormInput
-                isValid={inputsState}
                 inputTitle="Email"
                 inputType="email"
-                value={""}
-                onChange={() => {}}
+                value={email}
+                isValid={isValidEmail}
+                onChange={(value: string) => dispatch(setRegistrationEmailAction(value.trim()))}
             />
             <FormInput
-                isValid={inputsState}
                 inputTitle="Password"
-                inputType="text"
-                value={""}
-                onChange={() => {}}
+                inputType="password"
+                value={password}
+                isValid={isValidPassword}
+                onChange={(value: string) => dispatch(setRegistrationPasswordAction(value.trim()))}
             />
             <FormInput
-                isValid={inputsState}
                 inputTitle="Confirm Password"
-                inputType="text"
-                value={""}
-                onChange={() => {}}
+                inputType="password"
+                value={confirmPassword}
+                isValid={isValidConfirmPassword}
+                onChange={(value: string) => dispatch(setRegistrationConfirmPasswordAction(value.trim()))}
             />
             <FormButton
-                isDisabled={buttonState}
-                onClick={onClickFormButton}
                 buttonName="Login"
+                isDisabled={!isValidName || !isValidEmail || !isValidPassword || !isValidConfirmPassword}
+                onClick={onClickFormButton}
             />
             <FormFootText 
                 text={"If you have account, you can"}

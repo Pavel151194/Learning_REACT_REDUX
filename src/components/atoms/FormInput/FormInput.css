@@ -33,7 +33,7 @@
     background: url(/src/assets/spy_password_icon.svg) no-repeat right center;
     cursor: pointer;
 }
-.check_input{
+.input_is_valid{
     width: 32px;
     height: 32px;
     position: absolute;
