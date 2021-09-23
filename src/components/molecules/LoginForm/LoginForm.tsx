@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { memo } from "react"
-import { Link} from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { Link, useHistory} from "react-router-dom"
+import { setLoginEmailAction, setLoginPasswordAction } from "../../../core"
+import { getLoginSelector } from "../../../core/selectors/loginSelector"
 import { validateEmail, validatePassword } from '../../../helpers'
 import { FormInput } from "../../atoms/FormInput"
 import { FormButton } from "../../atoms/FormButton"
@@ -12,43 +15,32 @@ interface ILoginForm {
 }
 
 export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
-    const [emailValue, setEmailValue] = useState("")
-    const [passwordValue, setPasswordValue] = useState("")
-
-    const [isEmailValid, setEmailValid] = useState(true)
-    const [isPasswordValid, setPasswordValid] = useState(true)
-
-    const [isButtonDisabled, setButtonState] = useState(false)
-
-    const onChangeEmail = (email: string) => {
-        setEmailValue(email)
-        validateEmail(email) ? setEmailValid(true) : setEmailValid(false)
-    }
-    const onChangePassword = (password: string) => {
-        setPasswordValue(password)
-        validatePassword(password) ? setPasswordValid(true) : setPasswordValid(false)
-    }
-
+    const history = useHistory()
+    const dispatch = useDispatch()
+    const { email, password } = useSelector(getLoginSelector)
+    const isValidEmail = validateEmail(email)
+    const isValidPassword = validatePassword(password)
+    
     return (
         <main className="form">
             <FormInput
                 inputTitle="Email"
                 inputType="email"
-                value={emailValue}
-                isValid={isEmailValid}
-                onChange={onChangeEmail}
+                value={email}
+                isValid={isValidEmail}
+                onChange={(value: string) => dispatch(setLoginEmailAction(value.trim()))}
                 autoFocus={true}
             />
             <FormInput
                 inputTitle="Password"
                 inputType="password"
-                value={passwordValue}
-                isValid={isPasswordValid}
-                onChange={onChangePassword}
+                value={password}
+                isValid={isValidPassword}
+                onChange={(value: string) => dispatch(setLoginPasswordAction(value.trim()))}
             />
             <FormButton
                 buttonName="Login"
-                isDisabled={isButtonDisabled}
+                isDisabled={!isValidEmail || !isValidPassword}
                 onClick={onClickFormButton}
             />
             <FormFootText
