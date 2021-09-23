@@ -15,7 +15,7 @@ interface ILoginForm {
 }
 
 export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
-    const history = useHistory()
+    //const history = useHistory()
     const dispatch = useDispatch()
     const { email, password } = useSelector(getLoginSelector)
     const isValidEmail = validateEmail(email)

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
 import { FormTitle } from '../components/atoms/FormTitle'

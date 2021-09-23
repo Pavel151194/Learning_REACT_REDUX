@@ -15,7 +15,7 @@ interface IRegistrationForm {
 }
 
 export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => {
-    const history = useHistory()
+    //const history = useHistory()
     const dispatch = useDispatch()
     const { userName, email, password, confirmPassword } = useSelector(getRegistrationSelector)
     const isValidName = validateName(userName)
