@@ -10,7 +10,6 @@ import "./Header.css"
 
 export const Header = () => {
     const { isOpenHeader } = useSelector(getAppState);
-    console.log({ isOpenHeader })
 
     const dispatch = useDispatch()
 

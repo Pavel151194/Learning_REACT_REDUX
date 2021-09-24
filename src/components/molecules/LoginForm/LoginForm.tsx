@@ -1,7 +1,7 @@
 import React from 'react'
 import { memo } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useHistory} from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { setLoginEmailAction, setLoginPasswordAction } from "../../../core"
 import { getLoginSelector } from "../../../core/selectors/loginSelector"
 import { validateEmail, validatePassword } from '../../../helpers'

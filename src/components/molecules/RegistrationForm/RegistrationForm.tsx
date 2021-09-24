@@ -1,7 +1,7 @@
 import * as React from "react"
 import { memo } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useHistory} from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { setRegistrationEmailAction, setRegistrationUsernameAction, setRegistrationPasswordAction, setRegistrationConfirmPasswordAction } from "../../../core"
 import { getRegistrationSelector } from "../../../core/selectors/registrationSelector"
 import { FormInput } from "../../atoms/FormInput"
