@@ -5,15 +5,13 @@ import { rootReducer } from "./rootReducer"
 import { rootSaga } from "./saga"
 import { IState } from "./types"
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware()
 
 export const store: Store<IState> = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 )
 
-export const initialRootState = {
-  ...store.getState(),
-}
+export const initialRootState = { ...store.getState() }
 
 sagaMiddleware.run(rootSaga)
