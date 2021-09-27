@@ -1,4 +1,4 @@
-export * from "./appActions"
+export * from "./burgerActions"
 export * from "./loginActions"
 export * from "./newPasswordActions"
 export * from "./registrationActions"

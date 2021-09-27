@@ -1,4 +1,4 @@
-export * from "./appSelectors"
+export * from "./burgerSelectors"
 export * from "./loginSelector"
 export * from "./newPasswordSelector"
 export * from "./registrationSelector"
