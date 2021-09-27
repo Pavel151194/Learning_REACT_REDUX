@@ -1,7 +1,11 @@
-import * as React from "react"
-import { memo } from "react"
+import React, { memo } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Link} from "react-router-dom"
-import { FormHeadText, FormInput, FormButton,FormFootText  } from "../../atoms"
+
+import { getResetPasswordSelector } from "../../../core/selectors"
+import { setResetPasswordEmailAction } from "../../../core/actions"
+import { validateEmail } from "../../../helpers"
+import { FormHeadText, FormInput, FormButton, FormFootText } from "../../atoms"
 import "./ResetPasswordForm.css"
 
 interface IResetPasswordForm {
@@ -9,21 +13,23 @@ interface IResetPasswordForm {
 }
 
 export const ResetPasswordForm = memo( ({ onClickFormButton }: IResetPasswordForm) => {
-    const inputsState = true
-    const buttonState = false
-
+    const dispatch = useDispatch()
+    const { email } = useSelector(getResetPasswordSelector)
+    const isValidEmail = validateEmail(email)
+    
     return(
         <main className="form">
             <FormHeadText content={"Please enter the email for your account"}/>
             <FormInput
-                isValid={inputsState}
                 inputTitle="Email"
                 inputType="email"
-                value={""}
-                onChange={() => {}}
+                value={email}
+                isValid={isValidEmail}
+                onChange={(value: string) => dispatch(setResetPasswordEmailAction(value.trim()))}
+                autoFocus={true}
             />
             <FormButton
-                isDisabled={buttonState}
+                isDisabled={!isValidEmail}
                 onClick={onClickFormButton}
                 buttonName="Reset"
             />

@@ -1,3 +1,5 @@
-export * from "./appReducer"
-export * from "./registrationReducer"
+export * from "./burgerReducer"
 export * from "./loginReducer"
+export * from "./newPasswordReducer"
+export * from "./registrationReducer"
+export * from "./resetPasswordReducer"

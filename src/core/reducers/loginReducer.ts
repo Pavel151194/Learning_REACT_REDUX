@@ -13,7 +13,7 @@ const defaultState: ILoginState = {
 
 const actions = {
   setLoginEmailAction,
-  setLoginPasswordAction,
+  setLoginPasswordAction
 }
 
 export const loginReducer = createReducer<ILoginState, ActionType <typeof actions> >(defaultState)

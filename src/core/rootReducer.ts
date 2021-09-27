@@ -1,13 +1,10 @@
 import { combineReducers } from "redux"
-
-import { appReducer } from "../core/reducers"
-import { registrationReducer } from "../core/reducers/registrationReducer"
-import { loginReducer } from "../core/reducers/loginReducer"
-import { newPasswordReducer } from "../core/reducers/newPasswordReducer"
+import { appReducer, registrationReducer, loginReducer, newPasswordReducer, resetPasswordReducer } from "../core/reducers"
 
 export const rootReducer = combineReducers({
   app: appReducer,
-  registration: registrationReducer,
   login: loginReducer,
   newPassword: newPasswordReducer,
+  registration: registrationReducer,
+  resetPassword: resetPasswordReducer
 })

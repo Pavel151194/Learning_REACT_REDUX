@@ -1,8 +1,8 @@
 import React, { memo } from "react"
 import { Link, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { setLoginEmailAction, setLoginPasswordAction } from "../../../core"
-import { getLoginSelector } from "../../../core/selectors/loginSelector"
+import { setLoginEmailAction, setLoginPasswordAction } from "../../../core/actions"
+import { getLoginSelector } from "../../../core/selectors"
 import { validateEmail, validatePassword } from '../../../helpers'
 import { FormInput, FormButton, FormFootText } from "../../atoms"
 import "./LoginForm.css"
