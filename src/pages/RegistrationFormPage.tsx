@@ -1,7 +1,7 @@
 import React from 'react'
-import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
-import { FormTitleLinks } from '../components/atoms/FormTitleLinks'
-import { RegistrationForm } from '../components/molecules/RegistrationForm'
+import { SignFormTemplate } from '../components/templates'
+import { FormTitleLinks } from '../components/atoms'
+import { RegistrationForm } from '../components/molecules'
 
 export const RegistrationFormPage = () => {
     
@@ -9,9 +9,7 @@ export const RegistrationFormPage = () => {
         <SignFormTemplate
             formTitle={<FormTitleLinks isRegistrationPage={true}/>}
             formMain={
-                <RegistrationForm
-                    onClickFormButton={() => {}}
-                />
+                <RegistrationForm/>
             }
         />
     )

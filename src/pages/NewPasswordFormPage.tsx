@@ -1,7 +1,7 @@
 import React from 'react'
-import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
-import { FormTitle } from '../components/atoms/FormTitle'
-import { NewPasswordForm } from '../components/molecules/NewPasswordForm'
+import { SignFormTemplate } from '../components/templates'
+import { FormTitle } from '../components/atoms'
+import { NewPasswordForm } from '../components/molecules'
 
 export const NewPasswordFormPage = () => {
     

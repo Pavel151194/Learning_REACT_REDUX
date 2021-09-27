@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { setNewPasswordPasswordAction, setNewPasswordConfirmPasswordAction } from "../../../core"
 import { getNewPasswordSelector } from "../../../core/selectors/newPasswordSelector"
 import { validatePassword, validateConfirmPassword } from "../../../helpers"
-import { FormInput } from "../../atoms/FormInput"
-import { FormButton } from "../../atoms/FormButton"
-import { FormHeadText } from "../../atoms/FormHeadText"
+import { FormInput, FormButton, FormHeadText } from "../../atoms"
 import "./NewPasswordForm.css"
 
 interface INewPasswordForm {

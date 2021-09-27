@@ -1,13 +1,10 @@
-import React from 'react'
-import { memo } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import React, { memo } from "react"
 import { Link, useHistory } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 import { setLoginEmailAction, setLoginPasswordAction } from "../../../core"
 import { getLoginSelector } from "../../../core/selectors/loginSelector"
 import { validateEmail, validatePassword } from '../../../helpers'
-import { FormInput } from "../../atoms/FormInput"
-import { FormButton } from "../../atoms/FormButton"
-import { FormFootText } from "../../atoms/FormFootText"
+import { FormInput, FormButton, FormFootText } from "../../atoms"
 import "./LoginForm.css"
 
 interface ILoginForm {
@@ -45,7 +42,7 @@ export const LoginForm = memo( ({ onClickFormButton }: ILoginForm) => {
             />
             <FormFootText
                 text={"Forgot your password?"}
-                link={<Link to="reset-password">Reset password</Link>}
+                link={<Link style={{color: "#016EFC"}} to="reset-password">Reset password</Link>}
             />
         </main>
     )

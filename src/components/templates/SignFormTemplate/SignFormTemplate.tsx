@@ -1,5 +1,5 @@
-import React from 'react'
-import { Header } from '../../molecules/Header'
+import React, { memo } from "react"
+import { Header } from '../../molecules'
 import "./SignFormTemplate.css"
 
 interface ISignFormTemplate {
@@ -7,10 +7,10 @@ interface ISignFormTemplate {
     formMain: React.ReactNode
 }
 
-export const SignFormTemplate = ({ formTitle, formMain }: ISignFormTemplate) => (
+export const SignFormTemplate = memo( ({ formTitle, formMain }: ISignFormTemplate) => (
     <div className="wrapper sign_form_template">
         <Header/>
         {formTitle}
         {formMain}
     </div>
-)
+))

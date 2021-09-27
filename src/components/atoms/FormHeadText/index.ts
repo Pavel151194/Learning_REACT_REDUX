@@ -1,1 +1,0 @@
-export { FormHeadText } from "./FormHeadText";

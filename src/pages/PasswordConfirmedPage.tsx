@@ -1,8 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
-import { FormTitle } from '../components/atoms/FormTitle'
-import { FormButton } from '../components/atoms/FormButton'
+import { SignFormTemplate } from '../components/templates'
+import { FormTitle, FormButton } from '../components/atoms'
 
 export const PasswordConfirmedPage = () => {
     const history = useHistory()

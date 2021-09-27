@@ -1,5 +1,5 @@
-import React from 'react'
-import { Header } from '../../molecules/Header'
+import React, { memo } from "react"
+import { Header } from '../../molecules'
 import "./HomeTemplate.css"
 
 interface IHomeTemplate {
@@ -7,10 +7,10 @@ interface IHomeTemplate {
     homeMain: React.ReactNode
 }
 
-export const HomeTemplate = ({ homeTitle, homeMain }: IHomeTemplate) => (
+export const HomeTemplate = memo( ({ homeTitle, homeMain }: IHomeTemplate) => (
     <div className="wrapper home_template">
         <Header/>
         {homeTitle}
         {homeMain}
     </div>
-)
+))
