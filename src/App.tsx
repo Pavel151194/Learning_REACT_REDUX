@@ -1,15 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { HomePage, LoginFormPage, RegistrationFormPage, ResetPasswordFormPage, NewPasswordFormPage, RegistrationConfirmationPage, EmailConfirmedPage, PasswordConfirmationPage, PasswordConfirmedPage } from './pages'
 import './App.css'
-import { EmailConfirmedPage } from './pages/EmailConfirmedPage'
-import { HomePage } from './pages/HomePage'
-import { LoginFormPage } from './pages/LoginFormPage'
-import { NewPasswordFormPage } from './pages/NewPasswordFormPage'
-import { PasswordConfirmationPage } from './pages/PasswordConfirmationPage'
-import { PasswordConfirmedPage } from './pages/PasswordConfirmedPage'
-import { RegistrationConfirmationPage } from './pages/RegistrationConfirmationPage'
-import { RegistrationFormPage } from './pages/RegistrationFormPage'
-import { ResetPasswordFormPage } from './pages/ResetPasswordFormPage'
 
 function App() {
   return (

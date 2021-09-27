@@ -1,7 +1,7 @@
 import React from 'react'
-import { SignFormTemplate } from '../components/templates/SignFormTemplate/SignFormTemplate'
-import { FormTitleLinks } from '../components/atoms/FormTitleLinks'
-import { LoginForm } from '../components/molecules/LoginForm'
+import { SignFormTemplate } from '../components/templates'
+import { FormTitleLinks } from '../components/atoms'
+import { LoginForm } from '../components/molecules'
 
 export const LoginFormPage = () => {
 

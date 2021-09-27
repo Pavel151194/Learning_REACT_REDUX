@@ -1,16 +1,13 @@
-import React, { useCallback, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { HeaderBurger } from "../../atoms/HeaderBurger"
+import React, { memo, useCallback, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 import { setIsOpenHeader } from "../../../core"
 import { getAppState } from "../../../core/selectors/appSelectors"
-
-
+import { HeaderBurger } from "../../atoms"
 import "./Header.css"
 
-export const Header = () => {
+export const Header = memo( () => {
     const { isOpenHeader } = useSelector(getAppState);
-    console.log({ isOpenHeader })
 
     const dispatch = useDispatch()
 
@@ -45,4 +42,4 @@ export const Header = () => {
             )}
         </header>
     )
-}
+})

@@ -1,27 +1,32 @@
 import * as React from "react"
 import { memo } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, useHistory} from "react-router-dom"
-import { setRegistrationEmailAction, setRegistrationUsernameAction, setRegistrationPasswordAction, setRegistrationConfirmPasswordAction } from "../../../core"
+import { Link, useHistory } from "react-router-dom"
+import { setRegistrationEmailAction, setRegistrationUsernameAction, setRegistrationPasswordAction, setRegistrationConfirmPasswordAction, sendRegistrationDataAction } from "../../../core"
 import { getRegistrationSelector } from "../../../core/selectors/registrationSelector"
-import { FormInput } from "../../atoms/FormInput"
-import { FormButton } from "../../atoms/FormButton"
-import { FormFootText } from "../../atoms/FormFootText"
 import { validateName, validateEmail, validatePassword, validateConfirmPassword } from "../../../helpers"
+import { FormInput, FormButton, FormFootText } from "../../atoms"
 import "./RegistrationForm.css"
 
-interface IRegistrationForm {
-    onClickFormButton: () => void
-}
-
-export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm) => {
-    //const history = useHistory()
+export const RegistrationForm = memo( () => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const { userName, email, password, confirmPassword } = useSelector(getRegistrationSelector)
     const isValidName = validateName(userName)
     const isValidEmail = validateEmail(email)
     const isValidPassword = validatePassword(password)
     const isValidConfirmPassword = validateConfirmPassword(password, confirmPassword)
+
+    const loginUser = () => {
+        if(isValidName && isValidEmail && isValidPassword && isValidConfirmPassword){
+            dispatch(sendRegistrationDataAction({
+                username: userName,
+                password,
+                email
+            }))
+            history.push("/registration-confirmation")
+        }
+    }
 
     return (
         <main className="form">
@@ -57,11 +62,11 @@ export const RegistrationForm = memo( ({ onClickFormButton }: IRegistrationForm)
             <FormButton
                 buttonName="Login"
                 isDisabled={!isValidName || !isValidEmail || !isValidPassword || !isValidConfirmPassword}
-                onClick={onClickFormButton}
+                onClick={loginUser}
             />
             <FormFootText 
                 text={"If you have account, you can"}
-                link={<Link to="login">Login</Link>}
+                link={<Link to="login" style={{color: "#016EFC"}}>Login</Link>}
             />
         </main>
     )
