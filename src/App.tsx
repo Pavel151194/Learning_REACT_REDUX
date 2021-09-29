@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import { HomePage, LoginFormPage, RegistrationFormPage, ResetPasswordFormPage, NewPasswordFormPage, RegistrationConfirmationPage, EmailConfirmedPage, PasswordConfirmationPage, PasswordConfirmedPage } from './pages'
+import { HomePage, LoginFormPage, RegistrationFormPage, ResetPasswordFormPage, NewPasswordFormPage, RegistrationConfirmationPage, EmailConfirmedPage, PasswordConfirmationPage, PasswordConfirmedPage, PostsPage } from './pages'
 import './App.css'
 
 function App() {
@@ -33,6 +33,9 @@ function App() {
         </Route>
         <Route exact path="/password-confirmed">
           <PasswordConfirmedPage/>
+        </Route>
+        <Route exact path="/posts">
+          <PostsPage/>
         </Route>
       </Switch>
     </Router>
