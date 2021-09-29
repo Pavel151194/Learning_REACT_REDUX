@@ -1,0 +1,8 @@
+.post_template{
+    min-height: 100vh;
+    background: #f1f1f1;
+}
+.posts_page_title{
+    display: flex;
+    gap: 30px;
+}

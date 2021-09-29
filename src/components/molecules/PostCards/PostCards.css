@@ -1,0 +1,6 @@
+.post_cards{
+    display: flex;
+    column-gap: 40px;
+    row-gap: 30px;
+    flex-wrap: wrap;
+}
