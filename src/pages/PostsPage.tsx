@@ -3,10 +3,6 @@ import { PostsTemplate } from '../components/templates'
 import { PostPageTitle, AddPostButton } from '../components/atoms'
 import { PostCards } from '../components/molecules'
 
-interface IPostsPage {
-    onClick: () => void
-}
-
 export const PostsPage = ( () => {
     
     return (
