@@ -11,7 +11,7 @@ import "./RegistrationForm.css"
 export const RegistrationForm = memo( () => {
     const history = useHistory()
     const dispatch = useDispatch()
-    const { userName, email, password, confirmPassword } = useSelector(getRegistrationSelector)
+    const { userName, email, password, confirmPassword, error } = useSelector(getRegistrationSelector)
     const isValidName = validateName(userName)
     const isValidEmail = validateEmail(email)
     const isValidPassword = validatePassword(password)
@@ -24,7 +24,7 @@ export const RegistrationForm = memo( () => {
                 password,
                 email
             }))
-            history.push("/registration-confirmation")
+            //history.push("/registration-confirmation")
         }
     }
 
@@ -59,6 +59,9 @@ export const RegistrationForm = memo( () => {
                 isValid={isValidConfirmPassword}
                 onChange={(value: string) => dispatch(setRegistrationConfirmPasswordAction(value.trim()))}
             />
+
+            {error}
+
             <FormButton
                 buttonName="Login"
                 isDisabled={!isValidName || !isValidEmail || !isValidPassword || !isValidConfirmPassword}

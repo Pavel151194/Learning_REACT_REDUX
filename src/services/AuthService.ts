@@ -1,6 +1,5 @@
 import { BaseService } from "./BaseService"
-
-import { IUserAuth } from "../types/user"
+import { IUserAuth, IActivationPayload } from "../types/user"
 
 class AuthAPIService extends BaseService {
     private storage: Storage;
@@ -50,10 +49,14 @@ class AuthAPIService extends BaseService {
     //   return data;
     // }
 
-    public async signUp(profile: IUserAuth) {
+    public async registration(profile: IUserAuth) {
         return this.post("users/", profile)
     }
 
+    public async activateUser(activationPayload: IActivationPayload) {
+        return this.post("users/activation", activationPayload)
+    }
+    
     public async getUsers(profile: IUserAuth) {
         return this.get("users/")
     }

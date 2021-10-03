@@ -22,7 +22,7 @@ function App() {
         <Route exact path="/new-password">
           <NewPasswordFormPage/>
         </Route>
-        <Route exact path="/registration-confirmation">
+        <Route exact path="/activate/:uid/:token">
           <RegistrationConfirmationPage/>
         </Route>
         <Route exact path="/email-confirmed">
