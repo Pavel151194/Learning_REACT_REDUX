@@ -1,14 +1,25 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory, useParams } from 'react-router-dom'
 import { SignFormTemplate } from '../components/templates'
 import { FormTitle, FormButton } from '../components/atoms'
+import { AuthService } from "../services/AuthService"
+import { sendRegistrationConfirmation } from '../core'
+
 
 export const RegistrationConfirmationPage = () => {
-    const email = "test@gmail.com"
-    const buttonState = false
-
+    const dispatch = useDispatch()
     const history = useHistory()
-    const navigateTo = (path: string) => history.push(path)
+    const params = useParams() as any
+
+
+    useEffect(()=> {
+        if(params?.token && params?.uid) dispatch(sendRegistrationConfirmation(params))
+    }, [dispatch, params, params?.token, params?.uid])
+
+    const email = "email"
+
+    console.log({ params })
 
     return (
         <SignFormTemplate
@@ -21,8 +32,8 @@ export const RegistrationConfirmationPage = () => {
                         Please, check your email
                     </p>
                     <FormButton
-                        isDisabled={buttonState}
-                        onClick={() => navigateTo("/")}
+                        isDisabled={false}
+                        onClick={() => history.push("/")}
                         buttonName={"Home"}
                     />
                 </main>
